@@ -43,7 +43,14 @@ app.post("/compose", (req, res) => {
 })
 
 app.get("/posts/:postName", (req, res) => {
-  console.log(req.params.postName);
+  const requestedTitle = req.params.postName;
+  journals.forEach(post => {
+    if (post.title === requestedTitle)
+      console.log("Match found!");
+    else
+      console.log("Match not found!");
+  });
+  console.log(journals);
 })
 
 app.listen(PORT, () => {
