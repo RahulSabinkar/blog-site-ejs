@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
+  console.log(journals);
   res.render("home", {homeStartingContent: homeStartingContent});
 })
 
@@ -36,11 +37,10 @@ app.get("/compose", (req, res) => {
 app.post("/compose", (req, res) => {
   const post = {
     title: req.body.newJournalTitle,
-    entry: req.body.newJournalContent
+    content: req.body.newJournalContent
   };
   journals.push(post);
-  console.log(journals);
-  res.redirect("/compose");
+  res.redirect("/");
 })
 
 app.listen(PORT, () => {
