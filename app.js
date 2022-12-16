@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.render("home");
 })
 
 app.listen(PORT, function() {
