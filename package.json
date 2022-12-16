@@ -1,0 +1,19 @@
+{
+  "name": "blog-site-ejs",
+  "version": "1.0.0",
+  "description": "This is a challenge project I created while learning EJS through Express.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul Sabinkar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11"
+  }
+}
