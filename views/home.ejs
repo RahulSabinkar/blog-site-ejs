@@ -2,6 +2,7 @@
 <h1>Home</h1>
 <p><%= homeStartingContent %> </p>
 <%  journals.forEach(post => { %>
-<%  console.log(post.title); %>
+  <h1><%= post.title %></h1>
+  <p><%= post.content %></p>
 <%  }); %>
 <%- include('partials/footer'); -%>
