@@ -45,14 +45,11 @@ app.post("/compose", (req, res) => {
 
 app.get("/posts/:postName", (req, res) => {
   const requestedTitle = _.lowerCase(req.params.postName);
+
   journals.forEach(post => {
     const postTitle = _.lowerCase(post.title);
     if (postTitle === requestedTitle) {
-      console.log("Match found!");
-      console.log(`"${requestedTitle}":"${postTitle}"`);
-    } else {
-      console.log("Match not found!");
-      console.log(`"${requestedTitle}":"${postTitle}"`);
+      res.render("post", {post: post});
     }
   });
 })
